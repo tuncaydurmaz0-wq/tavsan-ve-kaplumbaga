@@ -1,0 +1,25 @@
+PROJECT T&K — KURULUM
+
+Bu dört dosyayı mevcut GitHub projenizin ana klasörüne kopyalayın:
+- index.html
+- styles.css
+- script.js
+- KURULUM.txt
+
+Dosya yapısı:
+
+tavsan-ve-kaplumbaga/
+├── index.html
+├── styles.css
+├── script.js
+└── assets/
+    ├── video.mp4
+    ├── ilkdans.mp3
+    └── photos/
+        ├── kapak.jpg
+        ├── 01.jpg
+        ├── 02.jpg
+        └── ... 36.jpg
+
+Dosya adları birebir aynı olmalıdır.
+Mektup metnini index.html içindeki “SANA BİR MEKTUP” bölümünden değiştirebilirsiniz.
