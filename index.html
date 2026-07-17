@@ -2,109 +2,249 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#090909" />
-  <title>Project T&K — Bir Yolculuğun Hikâyesi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#120b13" />
+  <title>Project T&K — Final Edition</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="./styles.css?v=2">
-  <style>
-    .hero-media {
-      background-image: url("./assets/photos/kapak.JPG") !important;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <div id="progressBar" aria-hidden="true"></div>
 
-  <section id="intro" class="intro">
-    <div class="intro-grain"></div>
+  <div id="intro" class="intro">
+    <div class="intro-glow"></div>
+
     <div class="intro-content">
-      <p class="eyebrow">PROJECT T&amp;K</p>
-      <h1>Tavşan &amp; Kaplumbağa</h1>
-      <p class="intro-copy">Bir yolculuğun hikâyesi</p>
-      <button id="startBtn" class="start-btn" type="button">
-        <span>Dokunarak Başla</span>
-        <span class="arrow">↓</span>
+      <p class="eyebrow">PROJECT T&K</p>
+
+      <h1>
+        Hikâyemizi<br>
+        <span>Başlat</span>
+      </h1>
+
+      <p class="intro-copy">
+        Bazı hikâyeler bir tarihle başlamaz; bir insanla anlam kazanır.
+      </p>
+
+      <button id="startButton" class="primary-button" type="button">
+        Hikâyemizi Başlat
       </button>
+
+      <p class="headphone-note">
+        En güzel deneyim için sesi açabilirsin.
+      </p>
     </div>
-  </section>
+  </div>
 
-  <main id="experience" class="experience is-locked">
-    <section class="quote-screen full-screen reveal">
-      <p>Her yolun bir varış noktası vardır...</p>
-    </section>
 
-    <section class="hero full-screen">
-      <div class="hero-media" role="img" aria-label="Kapak fotoğrafı"></div>
+  <audio id="backgroundMusic" preload="auto" loop>
+    <source src="assets/music/background.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="firstDanceMusic" preload="auto">
+    <source src="assets/music/ilkdans.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <button
+    id="soundButton"
+    class="sound-button"
+    type="button"
+    aria-label="Müziği aç veya kapat"
+  >
+    <span id="soundIcon">♫</span>
+  </button>
+
+
+  <main id="mainContent" class="hidden">
+
+    <section class="hero section">
       <div class="hero-overlay"></div>
+
       <div class="hero-content reveal">
-        <p class="eyebrow">BİZİM HİKÂYEMİZ</p>
-        <h2>19 Temmuz 2025</h2>
-        <p class="subtitle">Birlikte attığımız en güzel adımın başlangıcı...</p>
-        <div class="scroll-note">Hikâyemize doğru kaydır</div>
+        <p class="eyebrow">19 TEMMUZ 2025</p>
+
+        <h2>
+          Her yolun<br>
+          bir varış noktası var.
+        </h2>
+
+        <p>
+          Benim bütün yollarım, iyi ki sana çıkmış.
+        </p>
+
+        <div class="scroll-cue">
+          <span></span>
+        </div>
       </div>
     </section>
 
-    <section class="story section-shell">
-      <div class="section-heading reveal">
-        <p class="eyebrow">BİRLİKTE</p>
-        <h2>Biriktirdiğimiz Anılar</h2>
-        <p>Her fotoğraf, birlikte yürüdüğümüz yolun küçük bir parçası.</p>
+
+    <section class="quote-section section">
+      <div class="quote-card reveal">
+        <span class="quote-mark">“</span>
+
+        <blockquote>
+          İyi ki dediğim ne varsa sende toplandı.<br>
+          Varlığın, hayatımın en güzel tevafuku oldu.
+        </blockquote>
       </div>
+    </section>
+
+
+    <section class="story-section section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">BİZİM HİKÂYEMİZ</p>
+
+        <h2>
+          Birlikte biriktirdiğimiz<br>
+          güzel anlardan bazıları…
+        </h2>
+
+        <p>
+          Buradaki her kare, daha anlatılacak nice hatıranın küçük bir yansıması.
+        </p>
+      </div>
+
       <div id="gallery" class="gallery"></div>
     </section>
 
-    <section class="video-section section-shell">
+
+    <section class="video-section section">
       <div class="section-heading reveal">
-        <p class="eyebrow">SANA SÖYLEMEK İSTEDİKLERİM</p>
-        <h2>Bu kez gözlerinin içine bakarak...</h2>
+        <p class="eyebrow">BİRLİKTE GEÇEN ZAMAN</p>
+
+        <h2>
+          Bazı anlar fotoğrafa değil,<br>
+          kalbe sığar.
+        </h2>
       </div>
 
       <div class="video-frame reveal">
-        <div class="video-cover" id="videoCover">
-          <img src="./assets/photos/kapak.JPG" alt="Video kapak fotoğrafı">
-          <div class="video-cover-overlay"></div>
-          <div class="video-cover-content">
-            <p>Sana söylemek istediğim birkaç şey var...</p>
-            <button id="watchVideoBtn" class="watch-video-btn" type="button">▶ Videoyu İzle</button>
-          </div>
-        </div>
+        <video
+          id="memoryVideo"
+          controls
+          playsinline
+          preload="metadata"
+          poster="assets/photos/video-kapak.JPG"
+        >
+          <source src="assets/video/video.mp4" type="video/mp4">
 
-        <video id="memoryVideo" controls playsinline preload="metadata" poster="./assets/photos/kapak.JPG">
-          <source src="./assets/video/video.mp4" type="video/mp4">
-          Tarayıcınız bu videoyu oynatamıyor.
+          Tarayıcınız video etiketini desteklemiyor.
         </video>
       </div>
     </section>
 
-    <section class="letter-section section-shell">
-      <div class="letter-card reveal">
-        <p class="eyebrow">BİZİM HİKÂYEMİZ</p>
-        <h2>Son Birkaç Satır</h2>
-        <div class="letter-body">
-          <p>Bu sayfalara sığdıramadığım daha nice fotoğrafımız ve güzel anımız var. Buraya yalnızca hikâyemizi anlatan birkaç özel kareyi koyabildim; geri kalanların her biri hafızamızda ve kalbimizde yaşamaya devam ediyor.</p>
-          <p>Varlığına, hayatıma kattığın huzura ve her anımı güzelleştiren sevgine çok teşekkür ederim. Dönüp baktığımda, “iyi ki” dediğim ne varsa hepsinin sende toplandığını görüyorum. Sen benim en güzel tevafukum, en kıymetli yol arkadaşım ve kalbimin en huzurlu yerisin. Allah’ın izniyle hikâyemiz, yeni anılarla ve birlikte karşılayacağımız nice güzel yıllarla devam etsin. Seni çok seviyorum; iyi ki hayatımdasın, iyi ki biz olduk.</p>
-        </div>
+
+    <section class="letter-section section">
+      <div class="letter-paper reveal">
+        <p class="eyebrow">SON BİRKAÇ SATIR</p>
+
+        <h2>Canım eşim,</h2>
+
+        <p>
+          Bu sayfalara bütün fotoğraflarımızı sığdırmak mümkün değildi.
+          Çünkü birlikte biriktirdiğimiz her hatıranın kendine ait bir yeri,
+          bir sesi ve bir anlamı var. Buradaki kareler yalnızca daha nice
+          güzel anımızın küçük bir yansıması…
+        </p>
+
+        <p>
+          Varlığına çok teşekkür ederim. Seni çok seviyorum.
+          İyi ki dediğim ne varsa sende toplanmış gibi…
+          Sen, hayatımın en güzel tevafuklarından değil;
+          en güzel tevafukusun.
+        </p>
+
+        <p>
+          Allah’ın izniyle hikâyemiz; yeni anılarla, yeni yıllarla,
+          aynı sevgi ve aynı huzurla devam etsin.
+        </p>
+
+        <p class="signature">İyi ki biz…</p>
       </div>
     </section>
 
-    <section id="finale" class="finale full-screen">
-      <div class="finale-bg"></div>
-      <div class="finale-content reveal">
-        <p>Şimdi telefonunu cebine koy...</p>
-        <h2>Ve bana bak... ❤️</h2>
-        <button id="musicBtn" class="music-btn" type="button">İlk dansımızı başlat</button>
-        <p class="final-note">Çünkü bazı anlar ekranda değil, göz göze yaşanır.</p>
+
+    <section id="finalSection" class="final-section section">
+      <div class="final-content reveal">
+        <p>Şimdi telefonunu cebine koy…</p>
+
+        <h2>
+          Ve bana bak… <span>♥</span>
+        </h2>
+
+        <button
+          id="danceButton"
+          class="primary-button dance-button"
+          type="button"
+        >
+          İlk Dansımızı Başlat
+        </button>
       </div>
-      <audio id="firstDance" preload="auto" loop>
-        <source src="./assets/music/ilkdans.mp3" type="audio/mpeg">
-      </audio>
+
+      <button
+        id="secretHeart"
+        class="secret-heart"
+        type="button"
+        aria-label="Gizli sürpriz"
+      >
+        ♥
+      </button>
+
+      <div id="heartRain" class="heart-rain" aria-hidden="true"></div>
     </section>
+
   </main>
 
+
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button
+      id="closeLightbox"
+      class="close-lightbox"
+      type="button"
+      aria-label="Fotoğrafı kapat"
+    >
+      ×
+    </button>
+
+    <img
+      id="lightboxImage"
+      src=""
+      alt="Büyütülmüş anı fotoğrafı"
+    >
+  </div>
+
+
+  <div id="secretMessage" class="secret-message" aria-hidden="true">
+    <div class="secret-card">
+      <button
+        id="closeSecret"
+        type="button"
+        aria-label="Sürprizi kapat"
+      >
+        ×
+      </button>
+
+      <p class="eyebrow">GİZLİ SÜRPRİZ</p>
+
+      <h3>
+        Seni her gün,<br>
+        ilk günkü heyecanla seçiyorum.
+      </h3>
+
+      <p>
+        Ve bu hikâyeyi seninle yaşamaya devam etmek istiyorum.
+      </p>
+    </div>
+  </div>
+
+
   <script src="script.js"></script>
+
 </body>
 </html>
