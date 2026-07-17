@@ -37,7 +37,7 @@ button,video{font:inherit}
 .memory-card:nth-child(3n){grid-column:span 12;min-height:590px}
 .memory-card:nth-child(4n){grid-column:span 5}
 .memory-card:nth-child(4n+1){grid-column:span 7}
-.memory-card img{width:100%;height:100%;display:block;object-fit:cover;transition:transform 1s ease}
+.memory-card img{width:100%;height:100%;display:block;object-fit:contain;background:#050505;transition:transform 1s ease}
 .memory-card:hover img{transform:scale(1.04)}
 .memory-card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.82),transparent 55%);pointer-events:none}
 .memory-caption{position:absolute;z-index:2;left:22px;right:22px;bottom:20px}
@@ -72,9 +72,58 @@ button,video{font:inherit}
 @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
 @keyframes heroZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
 @media(max-width:780px){
-.section-shell{padding:84px 16px}
-.gallery{grid-template-columns:1fr;gap:14px}
-.memory-card,.memory-card:nth-child(3n),.memory-card:nth-child(4n),.memory-card:nth-child(4n+1){grid-column:auto;min-height:66svh;border-radius:18px}
+.section-shell{padding:84px 14px}
+.gallery{
+display:flex;
+flex-direction:column;
+gap:22px;
+scroll-snap-type:y proximity
+}
+.memory-card,
+.memory-card:nth-child(3n),
+.memory-card:nth-child(4n),
+.memory-card:nth-child(4n+1){
+display:flex;
+flex-direction:column;
+grid-column:auto;
+width:100%;
+min-height:92svh;
+overflow:hidden;
+border:1px solid rgba(255,255,255,.1);
+border-radius:20px;
+background:#050505;
+scroll-snap-align:start
+}
+.memory-card img{
+width:100%;
+height:auto;
+max-height:72svh;
+min-height:0;
+flex:1 1 auto;
+object-fit:contain;
+object-position:center;
+background:#050505
+}
+.memory-card:hover img{transform:none}
+.memory-card::after{display:none}
+.memory-caption{
+position:relative;
+left:auto;
+right:auto;
+bottom:auto;
+flex:0 0 auto;
+padding:20px 18px 24px;
+background:linear-gradient(to bottom,rgba(5,5,5,.92),#050505)
+}
+.memory-number{
+margin-bottom:10px;
+font-size:.68rem;
+letter-spacing:.22em
+}
+.memory-note{
+font-size:clamp(1.25rem,5.4vw,1.62rem);
+line-height:1.35
+}
 .hero-content{padding-bottom:48px}
 .letter-card{border-radius:20px}
 .video-cover-content p{font-size:clamp(2.2rem,10vw,3.8rem)}
