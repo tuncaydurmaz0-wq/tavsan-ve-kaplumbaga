@@ -24,18 +24,25 @@ img, video { display: block; width: 100%; }
 .hidden { display: none; }
 
 .intro {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  min-height: 100svh;
-  display: grid;
-  place-items: center;
-  padding: 28px;
-  text-align: center;
-  background:
-    linear-gradient(rgba(11,6,10,.54), rgba(11,6,10,.85)),
-    url("assets/photos/kapak.JPG") center/cover no-repeat;
-  transition: opacity 1.2s ease, visibility 1.2s ease;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    padding: 28px;
+    text-align: center;
+
+    background-color: #120910;
+    background-image:
+        linear-gradient(rgba(11, 6, 10, 0.35), rgba(11, 6, 10, 0.72)),
+        url("./assets/photos/kapak.JPG");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    transition: opacity 1.2s ease, visibility 1.2s ease;
 }
 .intro.is-leaving { opacity: 0; visibility: hidden; }
 .intro-glow {
