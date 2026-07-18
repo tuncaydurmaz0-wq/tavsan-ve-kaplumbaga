@@ -1,7 +1,0 @@
-1. script.js dosyasını mevcut script.js dosyasının yerine koyun.
-2. style-ekleme.css içindeki kodların tamamını mevcut style.css dosyasının EN ALTINA ekleyin.
-3. index.html, assets ve diğer dosyaları değiştirmeyin.
-4. VS Code'da File > Save All yapın.
-5. Live Server'ı yeniden başlatın ve Ctrl+F5 yapın.
-
-Bu sürümde 36 fotoğraf notlarıyla birlikte gösterilir.

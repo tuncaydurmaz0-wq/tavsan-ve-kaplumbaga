@@ -24,25 +24,18 @@ img, video { display: block; width: 100%; }
 .hidden { display: none; }
 
 .intro {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    min-height: 100vh;
-    min-height: 100svh;
-    display: grid;
-    place-items: center;
-    padding: 28px;
-    text-align: center;
-
-    background-color: #120910;
-    background-image:
-        linear-gradient(rgba(11, 6, 10, 0.35), rgba(11, 6, 10, 0.72)),
-        url("./assets/photos/kapak.JPG");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    transition: opacity 1.2s ease, visibility 1.2s ease;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  text-align: center;
+  background:
+    linear-gradient(rgba(11,6,10,.54), rgba(11,6,10,.85)),
+    url("assets/photos/kapak.JPG") center/cover no-repeat;
+  transition: opacity 1.2s ease, visibility 1.2s ease;
 }
 .intro.is-leaving { opacity: 0; visibility: hidden; }
 .intro-glow {
@@ -276,130 +269,151 @@ blockquote { margin: 0; font-family:"Cormorant Garamond",serif; font-size:clamp(
 .dance-button { margin-top: 28px; }
 
 /* =========================================================
-   GALERİ — GERÇEKTEN SON VE DÜZELTİLMİŞ DÜZEN
-   Diğer tüm animasyonlar ve özel bölümler korunur.
+   GALERİ — SADE VE DENGELİ SON DÜZEN
+   Diğer tüm animasyon ve bölümler korunmuştur.
 ========================================================= */
 
 .gallery,
 #gallery {
-  width: min(1080px, calc(100% - 40px)) !important;
-  margin-inline: auto !important;
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-
-  /* Eski sabit yükseklik sistemini tamamen iptal eder */
-  grid-auto-rows: auto !important;
-
-  /* Yatay ve dikey kart aralıkları */
-  column-gap: 32px !important;
-  row-gap: 58px !important;
-
-  align-items: start !important;
+  width: min(1080px, calc(100% - 40px));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 34px 28px;
+  align-items: start;
 }
 
 .memory-card,
 .photo-card {
-  grid-column: auto !important;
-  grid-row: auto !important;
-  height: auto !important;
-  min-height: 0 !important;
-  margin: 0 !important;
-  overflow: hidden !important;
-  border-radius: 22px !important;
-  background: rgba(25, 16, 22, 0.96) !important;
-  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.28) !important;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 22px;
+  background: rgba(25, 16, 22, 0.96);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.28);
   transition:
     transform 0.35s ease,
-    box-shadow 0.35s ease !important;
-}
-
-.photo-card.wide,
-.memory-card.wide,
-.photo-card.tall,
-.memory-card.tall {
-  grid-column: auto !important;
-  grid-row: auto !important;
+    box-shadow 0.35s ease;
 }
 
 .memory-card:hover,
 .photo-card:hover {
-  transform: translateY(-5px) !important;
-  box-shadow: 0 26px 58px rgba(0, 0, 0, 0.38) !important;
+  transform: translateY(-5px);
+  box-shadow: 0 26px 58px rgba(0, 0, 0, 0.38);
 }
 
 .memory-card img,
 .photo-card img {
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
-  aspect-ratio: 4 / 5 !important;
-  object-fit: cover !important;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
 }
 
 .memory-caption {
-  display: block !important;
-  height: auto !important;
-  min-height: 190px !important;
-  padding: 24px 22px 32px !important;
-  overflow: visible !important;
+  min-height: 142px;
+  padding: 19px 21px 23px;
 }
 
 .memory-number {
-  display: block !important;
-  margin-bottom: 12px !important;
-  color: #d9b477 !important;
-  font-size: 0.72rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.2em !important;
+  display: block;
+  margin-bottom: 10px;
+  color: #d9b477;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
 }
 
 .memory-note {
-  /* Bütün notlar eksiksiz görünür */
-  display: block !important;
-  height: auto !important;
-  max-height: none !important;
-  margin: 0 !important;
-  padding: 0 0 10px !important;
-  overflow: visible !important;
-
-  color: rgba(255, 250, 246, 0.92) !important;
-  font-size: clamp(1.04rem, 1.7vw, 1.24rem) !important;
-  line-height: 1.7 !important;
-  white-space: pre-line !important;
-
-  -webkit-box-orient: initial !important;
-  -webkit-line-clamp: unset !important;
-  line-clamp: unset !important;
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: rgba(255, 250, 246, 0.9);
+  font-size: clamp(1.04rem, 1.7vw, 1.24rem);
+  line-height: 1.5;
+  white-space: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
 }
 
-/* Tam ekranda da notların tamamı görünür */
+/* Tam ekran açıldığında notun tamamı görünür */
 .dynamic-lightbox-caption,
 .lightbox-caption {
-  display: block !important;
-  max-height: none !important;
-  overflow: visible !important;
-  white-space: pre-line !important;
-  -webkit-line-clamp: unset !important;
-  line-clamp: unset !important;
+  display: block;
+  overflow: visible;
+  white-space: pre-line;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
 }
 
 @media (max-width: 760px) {
   .gallery,
   #gallery {
-    width: min(520px, calc(100% - 24px)) !important;
-    grid-template-columns: 1fr !important;
-    grid-auto-rows: auto !important;
-    column-gap: 0 !important;
-    row-gap: 38px !important;
+    width: min(520px, calc(100% - 24px));
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 
   .memory-caption {
-    min-height: 0 !important;
-    padding: 22px 20px 28px !important;
+    min-height: auto;
+    padding: 18px 18px 22px;
   }
 
   .memory-note {
-    font-size: 1.1rem !important;
-    line-height: 1.65 !important;
+    font-size: 1.1rem;
+  }
+}
+
+
+/* ===== PROJECT T&K — YALNIZCA GÜVENLİ TELEFON DÜZENİ =====
+   Galeri, fotoğraflar, notlar, animasyonlar ve JavaScript değiştirilmez.
+================================================================ */
+
+@media only screen and (max-width: 768px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .intro {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding:
+      max(24px, env(safe-area-inset-top))
+      20px
+      max(24px, env(safe-area-inset-bottom));
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .intro-content {
+    width: 100%;
+    max-width: 520px;
+    margin-inline: auto;
+  }
+
+  .intro-title {
+    font-size: clamp(3rem, 14vw, 4.8rem);
+    line-height: .9;
+  }
+
+  .intro-subtitle {
+    max-width: 92%;
+    margin-inline: auto;
+    font-size: clamp(1rem, 4.3vw, 1.18rem);
+    line-height: 1.55;
+  }
+
+  .start-btn,
+  #startBtn,
+  .intro button {
+    max-width: 88vw;
+    min-height: 56px;
+    padding: 14px 24px;
+    touch-action: manipulation;
   }
 }
